@@ -1,17 +1,18 @@
 CREATE TABLE Investor (
     Investor_ID INT NOT NULL,
-    Names VARCHAR(50),
-    Account_ID INT,
-    PRIMARY KEY (Investor_ID)
+    Account_Name VARCHAR(50),
+    Account_ID INT NOT NULL,
+    PRIMARY KEY (Investor_ID),
+    UNIQUE KEY (Account_ID)
 );
 
 CREATE TABLE Account (
     Account_ID INT NOT NULL,
-    Names VARCHAR(50),
+    Account_Name VARCHAR(50),
     Total_Cash INT,
     PRIMARY KEY (Account_ID),
     FOREIGN KEY (Account_ID)
-        REFERENCES Investor (Account_ID)
+        REFERENCES Investor(Account_ID)
 );
     
 CREATE TABLE Analyst (
