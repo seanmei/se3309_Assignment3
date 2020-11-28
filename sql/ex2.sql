@@ -1,20 +1,21 @@
+ DROP DATABASE IF EXISTS invesmtment;
+ CREATE SCHEMA IF NOT EXISTS investment;
+ 
  CREATE TABLE IF NOT EXISTS Investor (
     Investor_ID INT NOT NULL,
-    Account_Name VARCHAR(50),
-    Account_ID INT NOT NULL,
-    PRIMARY KEY (Investor_ID),
-    UNIQUE KEY (Account_ID)
+    Investor_Name VARCHAR(50),
+    PRIMARY KEY (Investor_ID)
 );
 
 CREATE TABLE  IF NOT EXISTS Accounts (
     Account_ID INT NOT NULL,
     Account_Name VARCHAR(50),
     Total_Cash INT,
+	Investor_ID INT NOT NULL,
     PRIMARY KEY (Account_ID),
-    FOREIGN KEY (Account_ID)
-        REFERENCES Investor(Account_ID)
+    FOREIGN KEY (Investor_ID)
+        REFERENCES Investor(Investor_ID)
 );
-    
     
 CREATE TABLE IF NOT EXISTS Fund_Manager (
     Employee_ID INT NOT NULL,
@@ -31,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Fund_Manager (
     UNIQUE KEY (FUND_ID),
     UNIQUE KEY (Fund_Name)
 );
+
 CREATE TABLE IF NOT EXISTS Analyst (
     Employee_ID INT NOT NULL,
     Employee_Name VARCHAR(50),
@@ -45,24 +47,22 @@ CREATE TABLE IF NOT EXISTS Analyst (
     FOREIGN KEY (Manager_Employee_ID)
         REFERENCES Fund_Manager(Employee_ID)
 );
-    
-
 
 CREATE TABLE IF NOT EXISTS Stocks (
     Ticker_Symbol VARCHAR(10) NOT NULL,
     Price INT NOT NULL,
     Stock_Name VARCHAR(50) NOT NULL,
     Previous_Year_Profit INT,
-    Analyst_Rating INT,
+    Analyst_Rating VARCHAR(30),
     PRIMARY KEY (Ticker_Symbol)
 );
 
 CREATE TABLE IF NOT EXISTS Bonds (
     Ticker_Symbol VARCHAR(10) NOT NULL,
     Price INT NOT NULL,
-    Stock_Name VARCHAR(50) NOT NULL,
+    Bond_Name VARCHAR(50) NOT NULL,
     Interest_Rate INT NOT NULL,
-    Credit_Rating INT,
+    Credit_Rating VARCHAR(30),
     PRIMARY KEY (Ticker_Symbol)
 );
 
@@ -118,5 +118,3 @@ CREATE TABLE IF NOT EXISTS Bonds_Coverage (
     FOREIGN KEY (Ticker_Symbol)
         REFERENCES Bonds (Ticker_Symbol)
 );
-
-

@@ -1,0 +1,8 @@
+12, savings, 25000, 1
+13, high risk investments, 20000, 1 
+14, treasuray, 10000, 2
+15, high risk investments, 15000, 2 
+16, savings, 2000, 8
+17, high risk investments, 15000, 8 
+18, savings, 9000, 3
+19, high risk investments, 2300, 4 
