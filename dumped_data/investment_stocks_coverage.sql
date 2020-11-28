@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+--
+-- Host: localhost    Database: investment
+-- ------------------------------------------------------
+-- Server version	8.0.22
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `stocks_coverage`
+--
+
+DROP TABLE IF EXISTS `stocks_coverage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `stocks_coverage` (
+  `Employee_ID` int NOT NULL,
+  `Ticker_Symbol` varchar(10) NOT NULL,
+  PRIMARY KEY (`Employee_ID`,`Ticker_Symbol`),
+  KEY `Ticker_Symbol` (`Ticker_Symbol`),
+  CONSTRAINT `stocks_coverage_ibfk_1` FOREIGN KEY (`Employee_ID`) REFERENCES `analyst` (`Employee_ID`),
+  CONSTRAINT `stocks_coverage_ibfk_2` FOREIGN KEY (`Ticker_Symbol`) REFERENCES `stocks` (`Ticker_Symbol`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stocks_coverage`
+--
+
+LOCK TABLES `stocks_coverage` WRITE;
+/*!40000 ALTER TABLE `stocks_coverage` DISABLE KEYS */;
+INSERT INTO `stocks_coverage` VALUES (129,'AKEAAU'),(130,'BCQXHL'),(132,'BQNFRJ'),(132,'CFSNKY'),(130,'CVGZYT'),(131,'DEECZG'),(131,'EIFKNZ'),(131,'EITNVC'),(132,'FXINCB'),(132,'FZLMXS'),(131,'FZQPGV'),(131,'HPWZDN'),(131,'IWYFPK'),(132,'JIGDTL'),(131,'JZAFAU'),(129,'JZTFID'),(132,'KITKXL'),(129,'KMQFLO'),(132,'KTJJTH'),(131,'KVDOWH'),(131,'KZHQJK'),(129,'LPYKJK'),(130,'NCOWOY'),(132,'NCWOLA'),(132,'NUIAHD'),(131,'PAUDQO'),(129,'PILUMW'),(131,'PMLBBH'),(130,'QQDKZR'),(131,'QSXBYO'),(131,'RHHAIF'),(130,'RPGIOD'),(130,'RYNMKM'),(130,'SAWOZL'),(130,'TRCWKV'),(132,'USWZGN'),(131,'UWBFFQ'),(132,'VMWHTX'),(129,'WCEDRY'),(131,'WIFEVC'),(132,'WODKWR'),(132,'WQEBNM'),(130,'XFCLSN'),(130,'YCPOXX'),(130,'YFOCLH'),(130,'YHISZJ'),(131,'YJKJBP'),(132,'YJOIOS'),(131,'YRESWQ'),(129,'YRMAOF');
+/*!40000 ALTER TABLE `stocks_coverage` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-11-28 18:21:28

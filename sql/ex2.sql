@@ -1,3 +1,6 @@
+ DROP DATABASE IF EXISTS invesmtment;
+ CREATE SCHEMA IF NOT EXISTS investment;
+ 
  CREATE TABLE IF NOT EXISTS Investor (
     Investor_ID INT NOT NULL,
     Investor_Name VARCHAR(50),
@@ -14,7 +17,6 @@ CREATE TABLE  IF NOT EXISTS Accounts (
         REFERENCES Investor(Investor_ID)
 );
     
-    
 CREATE TABLE IF NOT EXISTS Fund_Manager (
     Employee_ID INT NOT NULL,
     Employee_Name VARCHAR(50),
@@ -30,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Fund_Manager (
     UNIQUE KEY (FUND_ID),
     UNIQUE KEY (Fund_Name)
 );
+
 CREATE TABLE IF NOT EXISTS Analyst (
     Employee_ID INT NOT NULL,
     Employee_Name VARCHAR(50),
@@ -44,8 +47,6 @@ CREATE TABLE IF NOT EXISTS Analyst (
     FOREIGN KEY (Manager_Employee_ID)
         REFERENCES Fund_Manager(Employee_ID)
 );
-    
-
 
 CREATE TABLE IF NOT EXISTS Stocks (
     Ticker_Symbol VARCHAR(10) NOT NULL,
@@ -117,5 +118,3 @@ CREATE TABLE IF NOT EXISTS Bonds_Coverage (
     FOREIGN KEY (Ticker_Symbol)
         REFERENCES Bonds (Ticker_Symbol)
 );
-
-

@@ -1,0 +1,4 @@
+129, Summers, 2020-12-10, 3000, Western University, Fit4Less, Technology, SASS, 28
+130, Zion, 2020-12-10, 3000, Western University, GoodLifeFitness, Technology, Deeptech, 28
+131, Sean, 2020-12-10, 3000, Western University, Club16, Consumer Retail Group, Consumer Goods, 27
+132, Young, 2020-12-10, 3000, Western University, Burger King, All Weather, China, 26
