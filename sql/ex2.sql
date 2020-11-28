@@ -1,18 +1,17 @@
  CREATE TABLE IF NOT EXISTS Investor (
     Investor_ID INT NOT NULL,
-    Account_Name VARCHAR(50),
-    Account_ID INT NOT NULL,
-    PRIMARY KEY (Investor_ID),
-    UNIQUE KEY (Account_ID)
+    Investor_Name VARCHAR(50),
+    PRIMARY KEY (Investor_ID)
 );
 
 CREATE TABLE  IF NOT EXISTS Accounts (
     Account_ID INT NOT NULL,
     Account_Name VARCHAR(50),
     Total_Cash INT,
+	Investor_ID INT NOT NULL,
     PRIMARY KEY (Account_ID),
-    FOREIGN KEY (Account_ID)
-        REFERENCES Investor(Account_ID)
+    FOREIGN KEY (Investor_ID)
+        REFERENCES Investor(Investor_ID)
 );
     
     
