@@ -53,16 +53,16 @@ CREATE TABLE IF NOT EXISTS Stocks (
     Price INT NOT NULL,
     Stock_Name VARCHAR(50) NOT NULL,
     Previous_Year_Profit INT,
-    Analyst_Rating INT,
+    Analyst_Rating VARCHAR(30),
     PRIMARY KEY (Ticker_Symbol)
 );
 
 CREATE TABLE IF NOT EXISTS Bonds (
     Ticker_Symbol VARCHAR(10) NOT NULL,
     Price INT NOT NULL,
-    Stock_Name VARCHAR(50) NOT NULL,
+    Bond_Name VARCHAR(50) NOT NULL,
     Interest_Rate INT NOT NULL,
-    Credit_Rating INT,
+    Credit_Rating VARCHAR(30),
     PRIMARY KEY (Ticker_Symbol)
 );
 
