@@ -4,7 +4,7 @@ mydb = mysql.connector.connect(
   host="localhost",
   user="root",
   password="root",
-  database = "investment"
+  database = "sys"
 )
 
 def retreive_securities(path):
@@ -42,7 +42,7 @@ def insert(data, table_name):
         statement = f"INSERT INTO {table_name} VALUES ({sample_string})"
         mycursor.execute(statement)
     
-"""
+
 insert(stocks, "Stocks")
 insert(bonds, "Bonds")
 insert(investors, "Investor")
@@ -56,7 +56,7 @@ insert(bond_ownership, "Owned_Bonds")
 
 insert(stock_coverage, "Stocks_Coverage")
 insert(bond_coverage, "Bonds_Coverage")
-"""
+
 
 mydb.commit()
 mydb.close()
